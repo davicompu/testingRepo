@@ -1,0 +1,73 @@
+table.tabular {
+	border: emCalc(2px) solid #FFF;
+
+	th {
+		cursor: pointer;
+	}
+
+	th, td {
+		border: emCalc(2px) solid #FFF;
+	}
+
+	tr.subtotal {
+		background-color: $table-subtotal-color;
+
+		td {
+			color: #FFF;
+			font-weight: bold;
+		}
+	}
+
+	tr.grandtotal {
+		background-color: $table-grandtotal-color;
+
+		td {
+			color: #FFF;
+			font-weight: bold;
+		}
+	}
+}
+table.bumped {
+        border-style: none;
+        width: 100%;
+
+        thead {
+                tr {
+                        th {
+                                i {
+                                        cursor: pointer;
+                                }
+                        }
+                }
+        }
+
+        tbody {
+                cursor: pointer;
+
+                tr {
+                        background: #FFF;
+
+                        td {
+                                padding: 0;
+
+                                a {
+                                        color: $body-font-color;
+                                        display: block;
+                                        height: 100%;
+                                        padding: 0.5625em 0.625em;
+                                        width: 100%;
+                                }
+                        }
+                }
+        }
+
+        tr {
+                border-color: $panel-border-color;
+                border-style: solid;
+                border-width: emCalc(1px) 0 emCalc(1px) 0;
+        }
+
+        .button {
+                margin: 0;
+        }
+}

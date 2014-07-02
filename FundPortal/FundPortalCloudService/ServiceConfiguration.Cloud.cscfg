@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="FundPortalCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-10.2.2">
+  <Role name="MvcWebRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=funddiagnostics;AccountKey=HJYEUkZ5Bie+U6TCogledGUeC1NSyGtoOdKDEdoAyRU5rB8gq/2X0yprhfECIuBbDDKukGkzM4p30KqVJptAvA==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=fundstorage;AccountKey=Tezg9dXIkOMo3Cnq65DNhXUDyhzAhuMcsj0g/kX63Ce319uNCx7tdOEikLSItC/UF1j6OwdFOcVH4yXFCTtFYA==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="csherman" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEDSYu97NMUimSCyGvqKdJzIwDQYJKoZIhvcNAQEBBQAEggEAVKDCJsAZvQWCPkp4pyE3kJAsz08VstjlPky6xPPwSQbCKrRyH7Wu1PWAolMqZCM0qZnBx4mSFOKgk4XZde7VauK4kixtM8Rh6pajzznrj/sK5/3d0aWASYtKWPbPDH0wl6YUZSyTdr+WzikLyWq/oXBaZarQ0DxC+NFFZe8++Sb3/VV8jhE+hcdNHEQS368YjPsm+gM0qz52GXgm+OokqvwqtzmUKmFtnkuelaEYLmceHny7IhnLjKsZf4pLlL5ZmYo+3Z/YRWzNHtXMjNIQTSaGTlVEpydyk6WjDZK8HTrKuPzsTUJEcOSG9biyOBCtQ9iRXW2JJRU0szgmqRauvzAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECH81HWTE0Zx4gBAOQm+bVzzZwtneyPynta1K" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2014-11-11T23:59:59.0000000-05:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="7304815F5ACA25F2309F122A540E0242A84DB4FC" thumbprintAlgorithm="sha1" />
+      <Certificate name="FundPortalSelfCert" thumbprint="961B6CC91AF3BD5DE29B1538527AC4FF84D6A8D1" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

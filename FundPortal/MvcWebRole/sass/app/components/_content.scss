@@ -1,0 +1,38 @@
+html {
+	background-color: #E0E0E0;
+	background-image: url("images/bright-squares.png");
+}
+
+.view-background {
+	background-color: $view-bg;
+	box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, .098), -3px 3px 3px 3px rgba(0, 0, 0, .098);
+	height: 90%;
+	margin-top: 30px;
+	padding-bottom: emCalc(20px);
+}
+
+.text-underline {
+	text-decoration: underline;
+}
+
+p {
+	&:last-child {
+		margin-bottom: 0 !important;
+	}
+}
+
+.negative-value {
+	color: $alert-color;
+}
+
+.default-cursor {
+	cursor: default !important;
+}
+
+.destroy-item {
+	background-color: lighten($alert-color, 30%) !important;
+}
+
+.time-stamp {
+	color: #777;
+}

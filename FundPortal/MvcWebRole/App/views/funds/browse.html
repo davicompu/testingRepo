@@ -1,0 +1,71 @@
+﻿<div class="row">
+    <div class="large-12 columns">
+        <h4 class="view-heading">FUNDS</h4>
+
+        <div class="row">
+            <div class="large-12 columns">
+                <a data-bind="click: navigateToCreateView">Create a new fund</a>
+            </div>
+        </div>
+
+        <p class="error-message" data-bind="if: error, text: error"></p>
+
+        <div class="row">
+            <div class="large-4 columns">
+                <label for="Area">
+                    Requesting area
+                </label>
+                <select name="Area" data-bind="foreach: areas, value: selectedAreaId">
+                    <option data-bind="attr: { value: Id }, text: Name"></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-12 columns">
+                <table class="tabular" data-bind="visible: !noItemsToShow()">
+                    <thead>
+                        <tr>
+                            <th data-bind="click: sort.bind($data, 'Number')">
+                                Fund number</th>
+                            <th data-bind="click: sort.bind($data, 'Title')">
+                                Title</th>
+                            <th class="hide-for-medium-down" data-bind="click: sort.bind($data, 'ResponsiblePerson')">
+                                Responsible person</th>
+                            <th class="hide-for-medium-down" data-bind="click: sort.bind($data, 'CurrentBudget')">
+                                Current fiscal year approved budget</th>
+                            <th class="hide-for-medium-down" data-bind="click: sort.bind($data, 'ProjectedExpenditures')">
+                                Current fiscal year projected expenditures</th>
+                            <th class="hide-for-medium-down" data-bind="click: sort.bind($data, 'requestedBudget')">
+                                Requested budget</th>
+                            <th class="hide-for-medium-down" data-bind="click: sort.bind($data, 'variance')">
+                                Variance</th>
+                            <th class="hide-for-medium-down" data-bind="click: sort.bind($data, 'Status')">
+                                Status</th>
+                            <th class="default-cursor hide-for-medium-down">Attachments</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: items">
+                        <tr>
+                            <td>
+                                <a data-bind="fastlink: '#/funds/edit/' + Id, text: Number"></a>
+                            </td>
+                            <td data-bind="text: Title"></td>
+                            <td class="hide-for-medium-down" data-bind="text: ResponsiblePerson"></td>
+                            <td class="hide-for-medium-down" data-bind="text: formattedCurrentBudget, css: { 'negative-value': CurrentBudget() < 0 }"></td>
+                            <td class="hide-for-medium-down" data-bind="text: formattedProjectedExpenditures, css: { 'negative-value': ProjectedExpenditures() < 0 }"></td>
+                            <td class="hide-for-medium-down" data-bind="text: formattedRequestedBudget, css: { 'negative-value': requestedBudget() < 0 }"></td>
+                            <td class="hide-for-medium-down" data-bind="text: formattedVariance, css: { 'negative-value': variance() < 0 }"></td>
+                            <td class="hide-for-medium-down" data-bind="text: fundStatusText"></td>
+                            <td class="text-center hide-for-medium-down" data-bind="foreach: FileUploads">
+                                <i class="fi-paperclip"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <p data-bind="if: noItemsToShow">No records</p>
+    </div>
+</div>
